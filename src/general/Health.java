@@ -1,3 +1,5 @@
+package general;
+
 public class Health {
 
 	private int current;
@@ -26,5 +28,9 @@ public class Health {
 
 	public void takeDamage(int damage) {
 		current = Math.max(0, current - damage);
+	}
+
+	public String toString() {
+		return String.format("Health : %s/%s", current, max);
 	}
 }

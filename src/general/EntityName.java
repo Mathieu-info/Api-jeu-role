@@ -1,3 +1,5 @@
+package general;
+
 public class EntityName {
 
 	private String name;
@@ -14,5 +16,9 @@ public class EntityName {
 
 	public String getName() {
 		return name;
+	}
+
+	public String toString() {
+		return String.format("Name : %s", name);
 	}
 }

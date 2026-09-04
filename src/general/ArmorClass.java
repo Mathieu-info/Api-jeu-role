@@ -1,3 +1,5 @@
+package general;
+
 public class ArmorClass {
 
 	private int value;
@@ -13,5 +15,9 @@ public class ArmorClass {
 
 	public int getValue() {
 		return value;
+	}
+
+	public String toString() {
+		return String.format("Armor Class : %s", value);
 	}
 }

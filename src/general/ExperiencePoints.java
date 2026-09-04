@@ -1,3 +1,5 @@
+package general;
+
 public class ExperiencePoints {
 
 	private int value;
@@ -20,5 +22,9 @@ public class ExperiencePoints {
 			throw new IllegalArgumentException("Amount cannot be negative");
 		}
 		this.value += amount;
+	}
+
+	public String toString() {
+		return String.format("Experience Points : %s", value);
 	}
 }

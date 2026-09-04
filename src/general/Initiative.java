@@ -1,3 +1,5 @@
+package general;
+
 public class Initiative {
 
 	private int value;
@@ -8,5 +10,9 @@ public class Initiative {
 
 	public int getValue() {
 		return value;
+	}
+
+	public String toString() {
+		return String.format("Initiative : %s", value);
 	}
 }
