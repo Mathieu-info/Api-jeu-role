@@ -30,6 +30,7 @@ public class Health {
 		current = Math.max(0, current - damage);
 	}
 
+	@Override
 	public String toString() {
 		return String.format("Health : %s/%s", current, max);
 	}

@@ -24,6 +24,7 @@ public class ExperiencePoints {
 		this.value += amount;
 	}
 
+	@Override
 	public String toString() {
 		return String.format("Experience Points : %s", value);
 	}

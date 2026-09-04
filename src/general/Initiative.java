@@ -12,6 +12,7 @@ public class Initiative {
 		return value;
 	}
 
+	@Override
 	public String toString() {
 		return String.format("Initiative : %s", value);
 	}

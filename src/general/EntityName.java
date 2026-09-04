@@ -18,6 +18,7 @@ public class EntityName {
 		return name;
 	}
 
+	@Override
 	public String toString() {
 		return String.format("Name : %s", name);
 	}

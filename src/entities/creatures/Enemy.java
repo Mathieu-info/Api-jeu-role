@@ -44,6 +44,7 @@ public class Enemy {
 		health.takeDamage(damage);
 	}
 
+	@Override
 	public String toString() {
 		return String.format(
 			"Name : %s,\nHealth : %s,\nExp : %s,\nArmor Class : %s",
