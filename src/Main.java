@@ -24,9 +24,11 @@ public class Main {
 		for (Enemy enemy : enemies) {
 			for (int i = 0; i < enemy.getAttacks().length; i++) {
 				AttackResult result = enemy.attack(i);
-				System.out.println(result.message() + " (" + result.damage() + " damage)");
+				System.out.println(
+					result.message() + " (" + result.damage() + " damage)"
+				);
 			}
-			System.out.println();
+			//System.out.println();
 		}
 	}
 }

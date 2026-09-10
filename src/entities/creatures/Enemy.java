@@ -59,7 +59,9 @@ public abstract class Enemy {
 		Attack attack = attacks[index];
 		return new AttackResult(
 			getName() +
-				" has attacked. It has dealt " +
+				" has used " +
+				attack.getName() +
+				". It has dealt " +
 				attack.getDamage() +
 				" damage",
 			attack.getDamage()
