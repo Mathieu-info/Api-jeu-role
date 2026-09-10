@@ -32,6 +32,6 @@ public class Health {
 
 	@Override
 	public String toString() {
-		return String.format("Health : %s/%s", current, max);
+		return String.format("%s/%s", current, max);
 	}
 }

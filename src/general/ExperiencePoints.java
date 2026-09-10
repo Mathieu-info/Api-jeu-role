@@ -26,6 +26,6 @@ public class ExperiencePoints {
 
 	@Override
 	public String toString() {
-		return String.format("Experience Points : %s", value);
+		return String.format("%s", value);
 	}
 }

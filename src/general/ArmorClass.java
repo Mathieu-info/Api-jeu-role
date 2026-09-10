@@ -19,6 +19,6 @@ public class ArmorClass {
 
 	@Override
 	public String toString() {
-		return String.format("Armor Class : %s", value);
+		return String.format("%s", value);
 	}
 }

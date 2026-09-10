@@ -20,6 +20,6 @@ public class EntityName {
 
 	@Override
 	public String toString() {
-		return String.format("Name : %s", name);
+		return String.format("%s", name);
 	}
 }

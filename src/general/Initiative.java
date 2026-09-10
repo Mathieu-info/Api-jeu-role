@@ -14,6 +14,6 @@ public class Initiative {
 
 	@Override
 	public String toString() {
-		return String.format("Initiative : %s", value);
+		return String.format("%s", value);
 	}
 }
