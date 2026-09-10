@@ -5,14 +5,14 @@ import general.EntityName;
 import general.ExperiencePoints;
 import general.Health;
 
-public class Enemy {
+public abstract class Enemy {
 
 	private Health health;
 	private EntityName name;
 	private ExperiencePoints exp;
 	private ArmorClass armorClass;
 
-	public Enemy(
+	protected Enemy(
 		Health health,
 		EntityName name,
 		ExperiencePoints exp,
@@ -47,7 +47,7 @@ public class Enemy {
 	@Override
 	public String toString() {
 		return String.format(
-			"Name : %s,\nHealth : %s,\nExp : %s,\nArmor Class : %s",
+			"%s,\n%s,\n%s,\n%s",
 			name,
 			health,
 			exp,
