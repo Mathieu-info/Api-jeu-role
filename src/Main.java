@@ -1,3 +1,4 @@
+import entities.attacks.AttackResult;
 import entities.creatures.Enemy;
 import entities.creatures.enemytypes.Goblin;
 import entities.creatures.enemytypes.Orc;
@@ -17,8 +18,15 @@ public class Main {
 			System.out.println();
 		}
 
-		System.out.println(goblin.daggerAttack());
 		System.out.println(orc.rage());
-		System.out.println(troll.trollAttack());
+		System.out.println();
+
+		for (Enemy enemy : enemies) {
+			for (int i = 0; i < enemy.getAttacks().length; i++) {
+				AttackResult result = enemy.attack(i);
+				System.out.println(result.message() + " (" + result.damage() + " damage)");
+			}
+			System.out.println();
+		}
 	}
 }

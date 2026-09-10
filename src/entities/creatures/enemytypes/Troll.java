@@ -1,5 +1,6 @@
 package entities.creatures.enemytypes;
 
+import entities.attacks.Club;
 import entities.creatures.Enemy;
 import general.ArmorClass;
 import general.EntityName;
@@ -13,11 +14,8 @@ public class Troll extends Enemy {
 			new Health(150, 150),
 			new EntityName("Troll"),
 			new ExperiencePoints(100),
-			new ArmorClass(18)
+			new ArmorClass(18),
+			new Club()
 		);
-	}
-
-	public String trollAttack() {
-		return getName() + " has attacked you!";
 	}
 }

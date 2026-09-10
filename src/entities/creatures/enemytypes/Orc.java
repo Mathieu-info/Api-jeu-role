@@ -1,5 +1,7 @@
 package entities.creatures.enemytypes;
 
+import entities.attacks.Axe;
+import entities.attacks.Club;
 import entities.creatures.Enemy;
 import general.ArmorClass;
 import general.EntityName;
@@ -13,7 +15,9 @@ public class Orc extends Enemy {
 			new Health(70, 70),
 			new EntityName("Orc"),
 			new ExperiencePoints(25),
-			new ArmorClass(14)
+			new ArmorClass(14),
+			new Axe(),
+			new Club()
 		);
 	}
 

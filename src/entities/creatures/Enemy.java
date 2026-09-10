@@ -1,9 +1,12 @@
 package entities.creatures;
 
+import entities.attacks.Attack;
+import entities.attacks.AttackResult;
 import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.Health;
+import java.util.Arrays;
 
 public abstract class Enemy {
 
@@ -11,17 +14,25 @@ public abstract class Enemy {
 	private EntityName name;
 	private ExperiencePoints exp;
 	private ArmorClass armorClass;
+	private Attack[] attacks;
 
 	protected Enemy(
 		Health health,
 		EntityName name,
 		ExperiencePoints exp,
-		ArmorClass armorClass
+		ArmorClass armorClass,
+		Attack... attacks
 	) {
+		if (attacks.length == 0) {
+			throw new IllegalArgumentException(
+				"an enemy needs at least one attack"
+			);
+		}
 		this.health = health;
 		this.name = name;
 		this.exp = exp;
 		this.armorClass = armorClass;
+		this.attacks = attacks;
 	}
 
 	public Health getHealth() {
@@ -38,6 +49,21 @@ public abstract class Enemy {
 
 	public ArmorClass getArmorClass() {
 		return armorClass;
+	}
+
+	public Attack[] getAttacks() {
+		return Arrays.copyOf(attacks, attacks.length);
+	}
+
+	public AttackResult attack(int index) {
+		Attack attack = attacks[index];
+		return new AttackResult(
+			getName() +
+				" has attacked. It has dealt " +
+				attack.getDamage() +
+				" damage",
+			attack.getDamage()
+		);
 	}
 
 	public void takeDamage(int damage) {

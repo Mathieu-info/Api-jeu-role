@@ -1,5 +1,6 @@
 package entities.creatures.enemytypes;
 
+import entities.attacks.RustedDagger;
 import entities.creatures.Enemy;
 import general.ArmorClass;
 import general.EntityName;
@@ -13,11 +14,8 @@ public class Goblin extends Enemy {
 			new Health(40, 40),
 			new EntityName("Goblin"),
 			new ExperiencePoints(10),
-			new ArmorClass(12)
+			new ArmorClass(12),
+			new RustedDagger()
 		);
-	}
-
-	public String daggerAttack() {
-		return getName() + " used its dagger!";
 	}
 }
