@@ -1,4 +1,5 @@
 package general;
+import exceptions.armor.IllegalArmorAmount;
 
 public class ArmorClass {
 
@@ -6,9 +7,7 @@ public class ArmorClass {
 
 	public ArmorClass(int value) {
 		if (value < 0) {
-			throw new IllegalArgumentException(
-				"Armor class value cannot be negative"
-			);
+            throw new IllegalArmorAmount(value);
 		}
 		this.value = value;
 	}
