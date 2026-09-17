@@ -1,4 +1,5 @@
 package general;
+import exceptions.entity.IllegalEntityName;
 
 public class EntityName {
 
@@ -6,10 +7,8 @@ public class EntityName {
 
 	public EntityName(String name) {
 		boolean containsNumbers = name.matches(".*\\d.*");
-		if (name == null || name.isEmpty() || containsNumbers == true) {
-			throw new IllegalArgumentException(
-				"name cannot be null or empty or contain numbers"
-			);
+		if (name == null || name.isEmpty() || containsNumbers) {
+            throw new IllegalEntityName(name);
 		}
 		this.name = name;
 	}
