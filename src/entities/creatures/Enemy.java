@@ -2,11 +2,13 @@ package entities.creatures;
 
 import entities.attacks.Attack;
 import entities.attacks.AttackResult;
+import exceptions.armor.IllegalArmorAmount;
 import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.Health;
 import java.util.Arrays;
+import exceptions.attack.IllegalAmountOfAttacksException;
 
 public abstract class Enemy {
 
@@ -24,9 +26,7 @@ public abstract class Enemy {
 		Attack... attacks
 	) {
 		if (attacks.length == 0) {
-			throw new IllegalArgumentException(
-				"an enemy needs at least one attack"
-			);
+			throw new IllegalAmountOfAttacksException();
 		}
 		this.health = health;
 		this.name = name;
