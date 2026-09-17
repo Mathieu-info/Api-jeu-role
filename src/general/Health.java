@@ -1,4 +1,5 @@
 package general;
+import exceptions.health.*;
 
 public class Health {
 
@@ -7,12 +8,10 @@ public class Health {
 
 	public Health(int current, int max) {
 		if (current < 0 || current > max) {
-			throw new IllegalArgumentException(
-				"current must be between 0 and " + max
-			);
+            throw new IllegalNegativeHealthException(current, max);
 		}
 		if (max <= 0) {
-			throw new IllegalArgumentException("max health must be positive");
+            throw new IllegalNegativeMaxHealthException(max);
 		}
 		this.current = current;
 		this.max = max;

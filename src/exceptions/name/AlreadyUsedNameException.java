@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.name;
 
 public class AlreadyUsedNameException extends RuntimeException {
     public AlreadyUsedNameException(String name) {

@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.name;
 
 public class IllegalNameException extends Exception {
     public IllegalNameException(String nom) {

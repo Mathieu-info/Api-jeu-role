@@ -1,10 +1,9 @@
 package heros;
 
 import java.util.ArrayList;
-import exceptions.IllegalNameException;
-import exceptions.AlreadyUsedNameException;
-import exceptions.IllegalNameLengthException;
-import heros.*;
+import exceptions.name.IllegalNameException;
+import exceptions.name.AlreadyUsedNameException;
+import exceptions.name.IllegalNameLengthException;
 
 public class NomHeros {
     private static ArrayList<String> tousHeros = new ArrayList<>();

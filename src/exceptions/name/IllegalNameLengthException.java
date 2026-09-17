@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.name;
 
 public class IllegalNameLengthException extends RuntimeException {
     public IllegalNameLengthException() {
