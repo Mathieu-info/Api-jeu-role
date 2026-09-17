@@ -7,6 +7,8 @@ import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.Health;
+import general.HealthScaling;
+import general.Level;
 import java.util.Arrays;
 import exceptions.attack.IllegalAmountOfAttacksException;
 
@@ -17,9 +19,12 @@ public abstract class Enemy {
 	private ExperiencePoints exp;
 	private ArmorClass armorClass;
 	private Attack[] attacks;
+	private Level level;
 
 	protected Enemy(
-		Health health,
+		Level level,
+		int baseMaxHealth,
+		HealthScaling healthScaling,
 		EntityName name,
 		ExperiencePoints exp,
 		ArmorClass armorClass,
@@ -28,7 +33,12 @@ public abstract class Enemy {
 		if (attacks.length == 0) {
 			throw new IllegalAmountOfAttacksException();
 		}
-		this.health = health;
+		int maxHealth = healthScaling.computeMaxHealth(
+			baseMaxHealth,
+			level.getValue()
+		);
+		this.level = level;
+		this.health = new Health(maxHealth, maxHealth);
 		this.name = name;
 		this.exp = exp;
 		this.armorClass = armorClass;
@@ -37,6 +47,10 @@ public abstract class Enemy {
 
 	public Health getHealth() {
 		return health;
+	}
+
+	public Level getLevel() {
+		return level;
 	}
 
 	public EntityName getName() {
@@ -75,7 +89,8 @@ public abstract class Enemy {
 	@Override
 	public String toString() {
 		return String.format(
-			"%s,\n%s,\n%s,\n%s",
+			"%s,\n%s,\n%s,\n%s,\n%s",
+			level,
 			name,
 			health,
 			exp,

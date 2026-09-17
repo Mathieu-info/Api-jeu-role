@@ -3,13 +3,14 @@ import entities.creatures.Enemy;
 import entities.creatures.enemytypes.Goblin;
 import entities.creatures.enemytypes.Orc;
 import entities.creatures.enemytypes.Troll;
+import general.Level;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Goblin goblin = new Goblin();
-		Orc orc = new Orc();
-		Troll troll = new Troll();
+		Goblin goblin = new Goblin(new Level(3));
+		Orc orc = new Orc(new Level(2));
+		Troll troll = new Troll(new Level(1));
 
 		Enemy[] enemies = { goblin, orc, troll };
 
