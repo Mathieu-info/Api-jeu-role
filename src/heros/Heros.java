@@ -1,3 +1,5 @@
+import heros.NomHeros;
+
 public class Heros {
     private int lienJoueur;
     private NomHeros nom;
