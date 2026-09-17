@@ -1,4 +1,5 @@
 package general;
+import exceptions.experience.IllegalNegativeExperiencePoint;
 
 public class ExperiencePoints {
 
@@ -6,9 +7,7 @@ public class ExperiencePoints {
 
 	public ExperiencePoints(int value) {
 		if (value < 0) {
-			throw new IllegalArgumentException(
-				"ExperiencePoints cannot be negative"
-			);
+            throw new IllegalNegativeExperiencePoint(value);
 		}
 		this.value = value;
 	}
@@ -19,7 +18,7 @@ public class ExperiencePoints {
 
 	public void add(int amount) {
 		if (amount < 0) {
-			throw new IllegalArgumentException("Amount cannot be negative");
+            throw new IllegalNegativeExperiencePoint(amount);
 		}
 		this.value += amount;
 	}

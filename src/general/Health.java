@@ -8,7 +8,7 @@ public class Health {
 
 	public Health(int current, int max) {
 		if (current < 0 || current > max) {
-            throw new IllegalNegativeHealthException(current, max);
+            throw new IllegalHealthException(current, max);
 		}
 		if (max <= 0) {
             throw new IllegalNegativeMaxHealthException(max);
