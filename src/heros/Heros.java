@@ -1,9 +1,9 @@
-import heros.NomHeros;
+import heros.*;
 
 public class Heros {
     private int lienJoueur;
     private NomHeros nom;
-    private HeroClass class;
+    private HeroClass category;
     private int niveau = 1;
     private int pointsExperience = 0;
     private int pointsVie;
@@ -11,13 +11,13 @@ public class Heros {
     private int pointsMagie;
     private int pointsMagieMax; // get from class in constructor
 
-    public Heros(int lienJoueur, NomHeros nom, HeroClass class) {
+    public Heros(int lienJoueur, NomHeros nom, HeroClass category) {
         this.lienJoueur = lienJoueur;
         this.nom = nom;
-        this.class = class;
-        this.pointsVieMax = class.vieClass;
+        this.category = category;
+        this.pointsVieMax = category.getBaseHealth();
         this.pointsVie = pointsVieMax;
-        this.pointsMagieMax = class.magieClass;
+        this.pointsMagieMax = category.getMagic();
         this.pointsMagie = pointsMagieMax;
     }
 }
