@@ -2,31 +2,30 @@ package heros;
 
 import java.util.ArrayList;
 import exceptions.name.IllegalNameException;
-import exceptions.name.AlreadyUsedNameException;
-import exceptions.name.IllegalNameLengthException;
 
 public class NomHeros {
-    private static ArrayList<String> tousHeros = new ArrayList<>();
-    private String caracteresPermis = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+    private static ArrayList<String> tousNoms = new ArrayList();
+    String regex = "^(?=.{2,30}$)[A-Za-zÀ-ÖØ-öø-ÿ]+(?: [A-Za-zÀ-ÖØ-öø-ÿ]+)*$";
     private String nom;
 
     public NomHeros(String nom) throws IllegalNameException {
-        if (nom.length() < 2 || nom.length() > 30) {
-           throw new IllegalNameLengthException();
+        if (this.estValide(nom) && this.estUnique(nom)) {
+            this.nom = nom;
+            tousNoms.add(nom);
         } else {
-            for (int i = 0; i < nom.length(); i++) {
-                if (!caracteresPermis.contains(String.valueOf(nom.charAt(i)))) {
-                    throw new IllegalNameException(nom);
-                }
-            }
-            if (String.valueOf(nom.charAt(0)).equals(" ") || String.valueOf(nom.charAt(nom.length() - 1)).equals(" ")) {
-                throw new IllegalNameException(nom);
-            } else {
-                if (tousHeros.contains(String.valueOf(nom))) {
-                    throw new AlreadyUsedNameException(nom);
-                }
-                this.nom = nom;
-            }
+            throw new IllegalArgumentException(nom);
         }
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    private boolean estValide(String nom) {
+        return nom.matches(this.regex);
+    }
+
+    private boolean estUnique(String nom) {
+        return !tousNoms.contains(nom);
     }
 }

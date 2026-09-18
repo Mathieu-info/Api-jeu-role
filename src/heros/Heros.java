@@ -20,4 +20,8 @@ public class Heros {
         this.pointsMagieMax = category.getMagic();
         this.pointsMagie = pointsMagieMax;
     }
+
+    public String getNom() {
+        return this.nom.getNom();
+    }
 }
