@@ -13,7 +13,7 @@ public class NomHeros {
             this.nom = nom;
             tousNoms.add(nom);
         } else {
-            throw new IllegalArgumentException(nom);
+            throw new IllegalNameException(nom);
         }
     }
 
