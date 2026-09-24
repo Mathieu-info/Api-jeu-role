@@ -3,6 +3,7 @@ package entities.creatures;
 import entities.attacks.Attack;
 import entities.attacks.AttackResult;
 import exceptions.armor.IllegalArmorAmount;
+import exceptions.attack.IllegalAmountOfAttacksException;
 import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
@@ -10,7 +11,6 @@ import general.Health;
 import general.HealthScaling;
 import general.Level;
 import java.util.Arrays;
-import exceptions.attack.IllegalAmountOfAttacksException;
 
 public abstract class Enemy {
 
