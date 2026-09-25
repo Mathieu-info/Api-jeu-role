@@ -17,5 +17,6 @@ public class Encounters {
             System.out.println("Antre du Troll");
         }
         System.out.println("==========================");
+        System.out.println("==========================");
     }
 }
