@@ -1,4 +1,3 @@
-import Events.Encounters;
 import entities.attacks.AttackResult;
 import entities.creatures.Enemy;
 import entities.creatures.enemytypes.Goblin;
@@ -12,8 +11,6 @@ public class Main {
 		Goblin goblin = new Goblin(new Level(3));
 		Orc orc = new Orc(new Level(2));
 		Troll troll = new Troll(new Level(1));
-
-        Encounters encounter = new Encounters();
 
 		Enemy[] enemies = { goblin, orc, troll };
 
@@ -34,7 +31,5 @@ public class Main {
 			}
 			//System.out.println();
 		}
-
-        encounter.randomEncounter();
 	}
 }
