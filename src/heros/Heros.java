@@ -23,7 +23,7 @@ public class Heros {
         }
 
         this.classHeros = new HeroClass(category);
-        this.caracteristiques = caracteristiques;
+        this.caracteristiques = new CaracteristiqueHeros();
 //        this.pointsVieMax = category.getBaseHealth();
         this.pointsVie = pointsVieMax;
 //        this.pointsMagieMax = category.getMagic();
