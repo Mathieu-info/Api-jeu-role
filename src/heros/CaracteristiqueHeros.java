@@ -25,9 +25,9 @@ public class CaracteristiqueHeros {
     private void checkCaracteristiques(String nomCaracteristique) throws OutOfBoundsCharacteristicsException {
         int value = this.caracteristiques.get(nomCaracteristique);
         if (value < 20 && value > 3) {
-            throw new OutOfBoundsCharacteristicsException(nomCaracteristique, value);
-        } else {
             System.out.println("Valeur valide pour " + nomCaracteristique); // temporaire
+        } else {
+            throw new OutOfBoundsCharacteristicsException(nomCaracteristique, value);
         }
     }
 
