@@ -6,6 +6,7 @@ import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.HealthScaling;
+import general.Initiative;
 import general.Level;
 
 public class Goblin extends Enemy {
@@ -13,9 +14,10 @@ public class Goblin extends Enemy {
 	private static final int BASE_MAX_HEALTH = 7;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 4;
 
-	public Goblin(Level level) {
+	public Goblin(Level level, Initiative initiative) {
 		super(
 			level,
+			initiative,
 			BASE_MAX_HEALTH,
 			HealthScaling.linear(HEALTH_GROWTH_PER_LEVEL),
 			new EntityName("Goblin"),

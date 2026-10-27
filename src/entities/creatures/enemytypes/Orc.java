@@ -7,6 +7,7 @@ import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.HealthScaling;
+import general.Initiative;
 import general.Level;
 
 public class Orc extends Enemy {
@@ -14,9 +15,10 @@ public class Orc extends Enemy {
 	private static final int BASE_MAX_HEALTH = 70;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 15;
 
-	public Orc(Level level) {
+	public Orc(Level level, Initiative initiative) {
 		super(
 			level,
+			initiative,
 			BASE_MAX_HEALTH,
 			HealthScaling.linear(HEALTH_GROWTH_PER_LEVEL),
 			new EntityName("Orc"),

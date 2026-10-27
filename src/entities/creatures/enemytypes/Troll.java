@@ -6,6 +6,7 @@ import general.ArmorClass;
 import general.EntityName;
 import general.ExperiencePoints;
 import general.HealthScaling;
+import general.Initiative;
 import general.Level;
 
 public class Troll extends Enemy {
@@ -13,9 +14,10 @@ public class Troll extends Enemy {
 	private static final int BASE_MAX_HEALTH = 150;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 30;
 
-	public Troll(Level level) {
+	public Troll(Level level, Initiative initiative) {
 		super(
 			level,
+			initiative,
 			BASE_MAX_HEALTH,
 			HealthScaling.linear(HEALTH_GROWTH_PER_LEVEL),
 			new EntityName("Troll"),
