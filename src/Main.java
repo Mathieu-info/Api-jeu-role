@@ -9,11 +9,11 @@ import general.Level;
 public class Main {
 
 	public static void main(String[] args) {
-		Goblin goblin = new Goblin(new Level(3));
-		Orc orc = new Orc(new Level(2));
-		Troll troll = new Troll(new Level(1));
+		Goblin goblin = new Goblin(new Level(3), new Initiative(2));
+		Orc orc = new Orc(new Level(2), new Initiative(1));
+		Troll troll = new Troll(new Level(1), new Initiative(0));
 
-        Encounters encounter = new Encounters();
+		Encounters encounter = new Encounters();
 
 		Enemy[] enemies = { goblin, orc, troll };
 
@@ -35,6 +35,6 @@ public class Main {
 			//System.out.println();
 		}
 
-        encounter.randomEncounter();
+		encounter.randomEncounter();
 	}
 }

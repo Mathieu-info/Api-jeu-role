@@ -9,6 +9,7 @@ import general.EntityName;
 import general.ExperiencePoints;
 import general.Health;
 import general.HealthScaling;
+import general.Initiative;
 import general.Level;
 import java.util.Arrays;
 
@@ -18,6 +19,7 @@ public abstract class Enemy {
 	private EntityName name;
 	private ExperiencePoints exp;
 	private ArmorClass armorClass;
+	private Initiative initiative;
 	private Attack[] attacks;
 	private Level level;
 
@@ -28,6 +30,7 @@ public abstract class Enemy {
 		EntityName name,
 		ExperiencePoints exp,
 		ArmorClass armorClass,
+		Initiative initiative,
 		Attack... attacks
 	) {
 		if (attacks.length == 0) {
@@ -42,6 +45,7 @@ public abstract class Enemy {
 		this.name = name;
 		this.exp = exp;
 		this.armorClass = armorClass;
+		this.initiative = initiative;
 		this.attacks = attacks;
 	}
 
@@ -63,6 +67,10 @@ public abstract class Enemy {
 
 	public ArmorClass getArmorClass() {
 		return armorClass;
+	}
+
+	public Initiative getInitiative() {
+		return initiative;
 	}
 
 	public Attack[] getAttacks() {
@@ -89,12 +97,13 @@ public abstract class Enemy {
 	@Override
 	public String toString() {
 		return String.format(
-			"%s,\n%s,\n%s,\n%s,\n%s",
+			"%s,\n%s,\n%s,\n%s,\n%s,\n%s",
 			level,
 			name,
 			health,
 			exp,
-			armorClass
+			armorClass,
+			initiative
 		);
 	}
 }
