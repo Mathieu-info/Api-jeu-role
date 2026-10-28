@@ -12,18 +12,18 @@ import general.Level;
 
 public class Orc extends Enemy {
 
-	private static final int BASE_MAX_HEALTH = 70;
+	private static final int BASE_MAX_HEALTH = 15;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 15;
 
 	public Orc(Level level, Initiative initiative) {
 		super(
-			level,
-			initiative,
+			new Level(1),
+			new Initiative(1),
 			BASE_MAX_HEALTH,
 			HealthScaling.linear(HEALTH_GROWTH_PER_LEVEL),
 			new EntityName("Orc"),
-			new ExperiencePoints(25),
-			new ArmorClass(14),
+			new ExperiencePoints(100),
+			new ArmorClass(13),
 			new Axe(),
 			new Club()
 		);

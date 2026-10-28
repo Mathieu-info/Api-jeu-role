@@ -10,9 +10,9 @@ import general.Level;
 public class Main {
 
 	public static void main(String[] args) {
-		Goblin goblin = new Goblin(new Level(3), new Initiative(2));
-		Orc orc = new Orc(new Level(2), new Initiative(1));
-		Troll troll = new Troll(new Level(1), new Initiative(0));
+		Goblin goblin = new Goblin();
+		Orc orc = new Orc();
+		Troll troll = new Troll();
 
 		Encounters encounter = new Encounters();
 
