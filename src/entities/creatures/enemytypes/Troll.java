@@ -14,7 +14,7 @@ public class Troll extends Enemy {
 	private static final int BASE_MAX_HEALTH = 35;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 30;
 
-	public Troll(Level level, Initiative initiative) {
+	public Troll() {
 		super(
 			new Level(1),
 			new Initiative(0),

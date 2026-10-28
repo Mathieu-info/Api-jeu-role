@@ -15,7 +15,7 @@ public class Orc extends Enemy {
 	private static final int BASE_MAX_HEALTH = 15;
 	private static final int HEALTH_GROWTH_PER_LEVEL = 15;
 
-	public Orc(Level level, Initiative initiative) {
+	public Orc() {
 		super(
 			new Level(1),
 			new Initiative(1),
