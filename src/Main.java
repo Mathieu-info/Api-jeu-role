@@ -1,4 +1,4 @@
-import Events.Encounters;
+// import Events.Encounters;
 import entities.attacks.AttackResult;
 import entities.creatures.Enemy;
 import entities.creatures.enemytypes.Goblin;
@@ -36,6 +36,7 @@ public class Main {
 			//System.out.println();
 		}
 
-		encounter.randomEncounter();
+		// Encounters is handled by teammates' event module; intentionally not exercised here.
+		// encounter.randomEncounter();
 	}
 }
