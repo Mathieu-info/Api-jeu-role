@@ -2,22 +2,16 @@ package heros.species;
 
 import heros.Ability;
 
-public final class Elf implements Species {
+import java.util.Map;
 
-	@Override
-	public String getName() {
-		return "Elf";
-	}
+public final class Elf extends AbstractSpecies {
 
-	@Override
-	public int getModifier(Ability ability) {
-		switch (ability) {
-			case DEXTERITY:
-				return 2;
-			case INTELLIGENCE:
-				return 1;
-			default:
-				return 0;
-		}
-	}
+    private static final Map<Ability, Integer> MODIFIERS = Map.of(
+            Ability.DEXTERITY, 2,
+            Ability.INTELLIGENCE, 1
+    );
+
+    public Elf() {
+        super("Elf", MODIFIERS);
+    }
 }

@@ -2,24 +2,17 @@ package heros.species;
 
 import heros.Ability;
 
-public final class Orc implements Species {
+import java.util.Map;
 
-	@Override
-	public String getName() {
-		return "Orc";
-	}
+public final class Orc extends AbstractSpecies {
 
-	@Override
-	public int getModifier(Ability ability) {
-		switch (ability) {
-			case STRENGTH:
-				return 2;
-			case CONSTITUTION:
-				return 1;
-			case INTELLIGENCE:
-				return -1;
-			default:
-				return 0;
-		}
-	}
+    private static final Map<Ability, Integer> MODIFIERS = Map.of(
+            Ability.STRENGTH, 2,
+            Ability.CONSTITUTION, 1,
+            Ability.INTELLIGENCE, -1
+    );
+
+    public Orc() {
+        super("Orc", MODIFIERS);
+    }
 }

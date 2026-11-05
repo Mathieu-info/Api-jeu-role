@@ -2,22 +2,16 @@ package heros.species;
 
 import heros.Ability;
 
-public final class Dwarf implements Species {
+import java.util.Map;
 
-	@Override
-	public String getName() {
-		return "Dwarf";
-	}
+public final class Dwarf extends AbstractSpecies {
 
-	@Override
-	public int getModifier(Ability ability) {
-		switch (ability) {
-			case CONSTITUTION:
-				return 2;
-			case STRENGTH:
-				return 1;
-			default:
-				return 0;
-		}
-	}
+    private static final Map<Ability, Integer> MODIFIERS = Map.of(
+            Ability.CONSTITUTION, 2,
+            Ability.STRENGTH, 1
+    );
+
+    public Dwarf() {
+        super("Dwarf", MODIFIERS);
+    }
 }
