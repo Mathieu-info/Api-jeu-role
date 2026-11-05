@@ -8,9 +8,7 @@ public class PotionDeSoin  implements  Items{
 
     public int calculSoin(Dice dice) {
         if (dice == null) {
-            throw new IllegalArgumentException(
-                    "Le dé est obligatoire."
-            );
+            throw new IllegalArgumentException("Le dé est obligatoire.");
         }
 
         return dice.dice4() + dice.dice4() + 2;

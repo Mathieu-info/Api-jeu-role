@@ -1,11 +1,11 @@
 package InventoryEquipment;
 import heros.CaracteristiqueHeros;
-public class Armure  implements Items{
+public class Armure  implements Items {
     private final String nom;
     private final int nombreBaseArmure;
     private final boolean bonusDexterite;
 
-    public Armure (String nom, int nombreBaseArmure, boolean bonusDexterite) {
+    public Armure(String nom, int nombreBaseArmure, boolean bonusDexterite) {
 
         this.nom = nom;
         this.nombreBaseArmure = nombreBaseArmure;
@@ -35,5 +35,6 @@ public class Armure  implements Items{
                     + caracteristiquesHeros.getModifier("Dextérité");
         }
 
-
+        return nombreBaseArmure;
     }
+}
