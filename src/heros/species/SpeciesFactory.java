@@ -1,6 +1,7 @@
 package heros.species;
 
 import exceptions.species.IllegalSpeciesException;
+import exceptions.species.IllegalSpeciesRegistrationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,9 +20,7 @@ public final class SpeciesFactory {
 
 	public static void register(String name, Species species) {
 		if (name == null || name.trim().isEmpty() || species == null) {
-			throw new IllegalArgumentException(
-				"A species name and species are required."
-			);
+			throw new IllegalSpeciesRegistrationException();
 		}
 		REGISTRY.put(normalize(name), species);
 	}

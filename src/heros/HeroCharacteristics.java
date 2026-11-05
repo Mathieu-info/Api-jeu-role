@@ -1,6 +1,7 @@
 package heros;
 
 import exceptions.characteristics.OutOfBoundsCharacteristicsException;
+import exceptions.characteristics.UnknownCharacteristicException;
 import heros.species.Human;
 import heros.species.Species;
 import java.util.EnumMap;
@@ -130,9 +131,7 @@ public class HeroCharacteristics {
 			characteristicName == null ||
 			!baseScores.containsKey(characteristicName)
 		) {
-			throw new IllegalArgumentException(
-				"Unknown characteristic: " + characteristicName
-			);
+			throw new UnknownCharacteristicException(characteristicName);
 		}
 	}
 }
