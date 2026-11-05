@@ -14,7 +14,7 @@ public class Main {
 		Orc orc = new Orc();
 		Troll troll = new Troll();
 
-		Encounters encounter = new Encounters();
+		//Encounters encounter = new Encounters();
 
 		Enemy[] enemies = { goblin, orc, troll };
 
@@ -36,7 +36,6 @@ public class Main {
 			//System.out.println();
 		}
 
-		// Encounters is handled by teammates' event module; intentionally not exercised here.
 		// encounter.randomEncounter();
 	}
 }
