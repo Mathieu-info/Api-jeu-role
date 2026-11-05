@@ -2,31 +2,28 @@ package heros.species;
 
 import exceptions.species.IllegalSpeciesException;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.function.Supplier;
 
 public final class SpeciesFactory {
 
-	private static final Map<String, Supplier<Species>> REGISTRY =
-		new HashMap<>();
+	private static final Map<String, Species> REGISTRY = new HashMap<>();
 
 	static {
-		register("Human", Human::new);
-		register("Elf", Elf::new);
-		register("Dwarf", Dwarf::new);
-		register("Orc", Orc::new);
+		register("Human", new Human());
+		register("Elf", new Elf());
+		register("Dwarf", new Dwarf());
+		register("Orc", new Orc());
 	}
 
 	private SpeciesFactory() {}
 
-	public static void register(String name, Supplier<Species> supplier) {
-		if (name == null || name.trim().isEmpty() || supplier == null) {
+	public static void register(String name, Species species) {
+		if (name == null || name.trim().isEmpty() || species == null) {
 			throw new IllegalArgumentException(
-				"A species name and supplier are required."
+				"A species name and species are required."
 			);
 		}
-		REGISTRY.put(normalize(name), supplier);
+		REGISTRY.put(normalize(name), species);
 	}
 
 	public static boolean isRegistered(String name) {
@@ -34,14 +31,14 @@ public final class SpeciesFactory {
 	}
 
 	public static Species create(String name) {
-		Supplier<Species> supplier = REGISTRY.get(normalize(name));
-		if (supplier == null) {
+		Species species = REGISTRY.get(normalize(name));
+		if (species == null) {
 			throw new IllegalSpeciesException(name);
 		}
-		return supplier.get();
+		return species;
 	}
 
 	private static String normalize(String name) {
-		return name.trim().toLowerCase(Locale.ROOT);
+		return name.trim().toLowerCase();
 	}
 }
