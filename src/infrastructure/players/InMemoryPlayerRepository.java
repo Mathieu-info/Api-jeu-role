@@ -6,11 +6,17 @@ import java.util.Map;
 import java.util.Optional;
 import players.Email;
 import players.Player;
+import players.PlayerId;
 import players.Pseudonym;
 
 public class InMemoryPlayerRepository implements PlayerRepository {
 
 	private final Map<String, Player> players = new HashMap<>();
+
+	@Override
+	public Optional<Player> findById(PlayerId id) {
+		return Optional.ofNullable(players.get(id.value()));
+	}
 
 	@Override
 	public Optional<Player> findByPseudonym(Pseudonym pseudonym) {
