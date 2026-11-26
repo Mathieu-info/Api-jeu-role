@@ -16,6 +16,13 @@ public final class PlayerId {
 		return new PlayerId(String.format("p-%08x", RANDOM.nextInt()));
 	}
 
+	public static PlayerId of(String value) {
+		if (value == null || value.isBlank()) {
+			throw new IllegalArgumentException("The player id is empty.");
+		}
+		return new PlayerId(value);
+	}
+
 	public String value() {
 		return value;
 	}

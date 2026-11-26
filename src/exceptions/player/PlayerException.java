@@ -1,22 +1,15 @@
 package exceptions.player;
 
 import api.ApiError;
+import exceptions.ApiException;
 
-public abstract class PlayerException extends RuntimeException {
-
-	private final ApiError error;
+public abstract class PlayerException extends ApiException {
 
 	protected PlayerException(ApiError error) {
-		super(error.description());
-		this.error = error;
+		super(error);
 	}
 
 	protected PlayerException(ApiError error, String detail) {
-		super(detail);
-		this.error = error;
-	}
-
-	public ApiError apiError() {
-		return error;
+		super(error, detail);
 	}
 }
